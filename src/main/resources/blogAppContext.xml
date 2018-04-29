@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://45.76.51.233:3306/blog"/>
+        <property name="username" value="root"/>
+        <property name="password" value="jin~@jake12"/>
+        <!--这个属性是无效的，spring会自己去管理事务，即便是false，事务也会被提交-->
+        <property name="defaultAutoCommit" value="false"/>
+    </bean>
+
+
+
+</beans>
