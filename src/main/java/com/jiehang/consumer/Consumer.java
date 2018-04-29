@@ -6,9 +6,12 @@ import javax.jms.Destination;
 import javax.jms.JMSException;
 import javax.jms.TextMessage;
 
+/**
+ * 消费者
+ */
 public class Consumer {
 
-    public JmsTemplate jmsTemplate;
+    private JmsTemplate jmsTemplate;
 
     public void receive(Destination destination) {
         TextMessage textMessage = (TextMessage) jmsTemplate.receive(destination);

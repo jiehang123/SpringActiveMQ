@@ -8,12 +8,15 @@ import javax.jms.Message;
 import javax.jms.Session;
 import javax.jms.Destination;
 
+/**
+ * 生产消息
+ */
 public class Producer {
 
     private JmsTemplate jmsTemplate;
 
     public void sendMessage(Destination destination, final String message) {
-        jmsTemplate.send((Destination) destination, new MessageCreator() {
+        jmsTemplate.send(destination, new MessageCreator() {
             public Message createMessage(Session session) throws JMSException {
                 return session.createTextMessage(message);
             }
