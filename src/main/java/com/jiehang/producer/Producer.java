@@ -1,0 +1,37 @@
+package com.jiehang.producer;
+
+import org.springframework.jms.core.JmsTemplate;
+import org.springframework.jms.core.MessageCreator;
+
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.Session;
+import javax.jms.Destination;
+
+public class Producer {
+
+    private JmsTemplate jmsTemplate;
+
+    public void sendMessage(Destination destination, final String message) {
+        jmsTemplate.send((Destination) destination, new MessageCreator() {
+            public Message createMessage(Session session) throws JMSException {
+                return session.createTextMessage(message);
+            }
+        });
+    }
+
+    public void sendMessage(final String message) {
+        jmsTemplate.send(new MessageCreator() {
+            public Message createMessage(Session session) throws JMSException {
+                return session.createTextMessage(message);
+            }
+        });
+    }
+
+    public JmsTemplate getJmsTemplate() {
+        return jmsTemplate;
+    }
+    public void setJmsTemplate(JmsTemplate jmsTemplate) {
+        this.jmsTemplate = jmsTemplate;
+    }
+}
