@@ -1,4 +1,4 @@
-package com.jiehang.util;
+package com.jinjie.util;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

@@ -19,7 +19,7 @@
     </bean>
     <!-- 消息队列连接工厂 -->
     <bean id="amqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
-        <property name="brokerURL" value="tcp://localhost:61616" />
+        <property name="brokerURL" value="tcp://45.76.51.233:61616" />
     </bean>
 
     <!-- 配置消息队列监听器-->
